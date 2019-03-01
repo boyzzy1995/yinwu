@@ -1,0 +1,36 @@
+<!--index.wxml-->
+<Contact></Contact>
+<view class="body">
+  <image src='../../images/add-image/banner1.png' class='topImg'></image>
+  <view class='inputView'>
+    <text>印刷产品</text>
+    <input bindinput="input" placeholder-class="pltext" id='product' value='{{submitData.product}}' placeholder='请填写您需要印刷的产品名'></input>
+  </view>
+  <view class='inputView'>
+    <text>印刷要求</text>
+    <input bindinput="input" placeholder-class="pltext" id="remark" value='{{submitData.remark}}' placeholder='材质、尺寸、工艺等印刷要求请注明'></input>
+  </view>
+  <view class='inputView'>
+    <text>印刷数量</text>
+    <input bindinput="input" type="number" placeholder-class="pltext" id="amount" value='{{submitData.amount}}' placeholder='请填写数量'></input>/张
+  </view>
+  <!--地址模块-->
+  <Address id="Address"></Address>
+  <view class='inputView' style='border:none;text-align:center;'>
+    <text bindtap='choose' style='width:100%;margin-top:30rpx;background-color:rgb(146,146,146);color:white;padding:20rpx 0;'>点击上传成品实例图片，共{{pics.length}}/5张</text>
+  </view>
+
+  <view class='prompt'>
+    <text>设计文件原稿请在提交需求后，发送至panjiwei@dingtalk.com
+邮件名请注明“公司+订单号”</text>
+  </view>
+
+  <view class='recommendViewView' wx:for="{{pics}}" wx:key="">
+    <view class='recommendView'>
+      <image src="{{'https://img.jinghangkuajing.com/temporary/'+item+'-compress'}}" class='recommendImg'></image>
+    </view>
+  </view>
+
+  <button class="submit" bindtap='submit'>提交印刷需求,等待工作人员对接定稿</button>
+
+</view>

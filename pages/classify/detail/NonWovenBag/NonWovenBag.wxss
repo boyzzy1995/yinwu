@@ -1,0 +1,136 @@
+/* pages/classify/detail/detail.wxss */
+
+page {
+  font-size: 30rpx;
+}
+
+swiper {
+  height: 300rpx;
+}
+
+.topImg {
+  width: 750rpx;
+  height: 300rpx;
+}
+
+.inputView {
+  display: flex;
+  width: 90%;
+  box-sizing: border-box;
+  padding: 20rpx;
+  margin-left: 5%;
+  border-bottom: 1px rgb(241, 241, 241) solid;
+  align-items: center;
+  margin-right: 5%;
+}
+
+.inputView text {
+  width: 38%;
+}
+
+.inputView text:nth-child(2) {
+  width: 65%;
+}
+
+.inputView input {
+  width: 25%;
+}
+
+.pltext {
+  font-size: 15px;
+  color: #999;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.inputView picker {
+  padding-left: 100rpx;
+  width: 50%;
+  color: #999;
+}
+
+.produce-view {
+  border-bottom: 2px solid #ff5b23;
+  width: 140rpx;
+  margin-bottom: 10rpx;
+  font-weight: 500;
+  font-size: 35rpx;
+  margin: 40rpx auto;
+  color: #ff5b23;
+  padding-bottom: 10rpx;
+}
+
+image {
+  height: 300rpx;
+  width: 100%;
+  padding: 0 0 10rpx 0;
+}
+
+.checkboxGroup {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  padding-top: 20rpx;
+  width: 90%;
+  margin: 0 auto;
+  border-bottom:1px solid rgb(241, 241, 241);
+}
+
+label {
+  width: 50%;
+  font-size: 26rpx;
+  padding: 0 0 20rpx 0;
+}
+
+.checkbox checkbox{
+  padding-left: 40rpx;
+}
+.address-box {
+  width: 90%;
+  background: url(https://cdn.it120.cc/images/weappshop/arrow-right.png) no-repeat 655rpx center,
+                url(https://cdn.it120.cc/images/weappshop/addr-line.png) no-repeat center bottom;
+  background-size: 16rpx auto, 750rpx auto;
+  background-color: #fff;
+  margin: 0 5%;
+}
+
+.add-addres {
+  width: 100%;
+}
+
+.add-address .title {
+  font-size: 28rpx;
+  color: #000;
+  margin-left: 20rpx;
+  background: url(https://cdn.it120.cc/images/weappshop/ico-add-addr.png) no-repeat left center;
+  background-size: 60rpx auto;
+  padding: 30rpx 0 30rpx 90rpx;
+}
+
+.show-address {
+  width: 664rpx;
+  box-sizing: border-box;
+  padding-left: 100rpx;
+  background: url(https://cdn.it120.cc/images/weappshop/ico-addr.png) no-repeat 30rpx 35rpx;
+  background-size: 30rpx auto;
+}
+
+.show-address .name-tel {
+  font-size: 28rpx;
+  color: #000;
+  padding: 30rpx 0 20rpx 0;
+}
+
+.show-address .addr-text {
+  font-size: 24rpx;
+  color: #888;
+  padding-bottom: 34rpx;
+  line-height: 36rpx;
+}
+
+.title{
+  width: 90%;
+  margin:0 auto;
+  padding: 20rpx 0 15rpx 0;
+  border-bottom: 1px solid #f2f2f2;
+  font-weight: 500;
+}

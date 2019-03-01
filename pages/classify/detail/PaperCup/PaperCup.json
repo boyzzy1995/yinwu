@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "纸杯",
+  "usingComponents": {
+    "MyPicker": "../../component/picker/picker"
+  }
+}

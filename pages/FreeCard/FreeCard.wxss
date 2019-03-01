@@ -1,0 +1,207 @@
+/* pages/address-add/index.wxss */
+
+page {
+  height: 100%;
+}
+
+.container {
+  background-color: #f5f5f9;
+  justify-content: initial;
+  padding: 0;
+}
+
+.form-box {
+  width: 100%;
+  background-color: #fff;
+  margin-top: 20rpx;
+}
+
+.row-wrap {
+  width: 720rpx;
+  height: 88rpx;
+  line-height: 88rpx;
+  margin-left: 30rpx;
+  border-bottom: 1rpx solid #eee;
+  display: flex;
+  font-size: 28rpx;
+}
+
+.row-wrap .label {
+  width: 180rpx;
+  color: #000;
+}
+
+.row-wrap .label-right {
+  flex: 1;
+  height: 88rpx;
+  line-height: 88rpx;
+}
+
+.row-wrap .label-right input {
+  height: 100%;
+  font-size: 28rpx;
+  padding-right: 30rpx;
+}
+
+.row-wrap .right-box {
+  margin-right: 30rpx;
+}
+
+.arrow-right {
+  width: 15rpx;
+  height: 24rpx;
+}
+
+.save-btn, .cancel-btn {
+  width: 690rpx;
+  height: 80rpx;
+  line-height: 80rpx;
+  text-align: center;
+  margin-top: 30rpx;
+  border-radius: 6rpx;
+  box-sizing: border-box;
+}
+
+.save-btn {
+  background-color: #e64340;
+  color: #fff;
+}
+
+button[type="default"] {
+  background-color: #fff;
+  color: #000;
+}
+
+.addr-details {
+  height: auto;
+  padding: 30rpx 0;
+  margin-left: 30rpx;
+  border-bottom: 1rpx solid #eee;
+  display: flex;
+  font-size: 28rpx;
+}
+
+.addr-details .label {
+  margin: auto 0 auto 0;
+  width: 180rpx;
+  color: #000;
+}
+
+.addr-details textarea {
+  box-sizing: border-box;
+  width: 480rpx;
+  overflow: scroll;
+}
+
+picker {
+  min-width: 20rpx;
+  height: 100%;
+  margin-right: 20rpx;
+}
+
+.hui {
+  color: #777;
+}
+
+.checkboxGroup {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  padding-top: 20rpx;
+  width: 90%;
+  margin: 0 auto;
+}
+
+label {
+  width: 100%;
+  font-size: 26rpx;
+  padding: 0 0 20rpx 0;
+  display: flex;
+  align-items: center;
+}
+
+label:nth-child(4) {
+  width: 30%;
+  font-size: 26rpx;
+  padding: 0 0 20rpx 0;
+  display: flex;
+  align-items: center;
+}
+
+.checkbox-view {
+  background-color: #fff;
+}
+
+.checkbox checkbox {
+  padding-left: 40rpx;
+}
+
+.title {
+  width: 90%;
+  margin: 0 auto;
+  padding: 20rpx 0 15rpx 0;
+  border-bottom: 1px solid #f2f2f2;
+  font-weight: 500;
+}
+
+.channelInput {
+  border-bottom: 1px solid #eee;
+  font-size: 26rpx;
+  width: 400rpx;
+  color: #8d8d8d;
+}
+
+/**
+ *地址
+ */
+
+.address-box {
+  width: 90%;
+  background: url(https://cdn.it120.cc/images/weappshop/arrow-right.png) no-repeat 655rpx center,
+                url(https://cdn.it120.cc/images/weappshop/addr-line.png) no-repeat center bottom;
+  background-size: 16rpx auto, 750rpx auto;
+  background-color: #fff;
+  margin: 0 5%;
+}
+
+.add-addres {
+  width: 100%;
+}
+
+.add-address .title {
+  font-size: 28rpx;
+  color: #000;
+  margin-left: 20rpx;
+  background: url(https://cdn.it120.cc/images/weappshop/ico-add-addr.png) no-repeat left center;
+  background-size: 60rpx auto;
+  padding: 30rpx 0 30rpx 90rpx;
+}
+
+.show-address {
+  width: 664rpx;
+  box-sizing: border-box;
+  padding-left: 100rpx;
+  background: url(https://cdn.it120.cc/images/weappshop/ico-addr.png) no-repeat 30rpx 35rpx;
+  background-size: 30rpx auto;
+}
+
+.show-address .name-tel {
+  font-size: 28rpx;
+  color: #000;
+  padding: 30rpx 0 20rpx 0;
+}
+
+.show-address .addr-text {
+  font-size: 24rpx;
+  color: #888;
+  padding-bottom: 34rpx;
+  line-height: 36rpx;
+}
+
+.note {
+  font-size: 22rpx;
+  padding: 10rpx 10rpx 10rpx 180rpx;
+  border-bottom: 1px solid #eee;
+  margin-left: 30rpx;
+  color: red;
+}

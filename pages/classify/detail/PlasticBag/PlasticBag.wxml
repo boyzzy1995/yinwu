@@ -1,0 +1,70 @@
+<!--pages/classify/detail/dm/dm.wxml-->
+<MyPicker></MyPicker>
+<view class='inputView'>
+  <text>产品名称:</text>
+  <text>{{productList.name}}</text>
+</view>
+<view class='inputView'>
+  <text>产品说明:</text>
+  <text>{{productList.describe}}</text>
+</view>
+<view style="height:5px;background: #eee;width:100%;"></view>
+<view class='inputView'>
+  <text style="font-size:22rpx;width:52%">成品尺寸(高度*宽度*侧面厚度)</text>
+  <input bindinput="input" type="number" placeholder-class="pltext" id="length" value='{{submitData.length}}' placeholder='请填写尺寸' style='width:38%;padding:0;'></input>
+</view>
+<view class='inputView'>
+  <text>材料名称</text>
+  <picker value="{{MaterialNameIndex}}" range="{{MaterialName}}" bindchange="bindMaterialNameChange">
+    <view class="picker">
+      {{MaterialName[MaterialNameIndex]}}
+    </view>
+  </picker>
+</view>
+<view class='inputView'>
+  <text>材料厚度(丝)</text>
+  <picker value="{{MaterialThicknessIndex}}" range="{{MaterialThickness}}" bindchange="bindMaterialThicknessChange">
+    <view class="picker">
+      {{MaterialThickness[MaterialThicknessIndex]}}
+    </view>
+  </picker>
+</view>
+<view class='inputView'>
+  <text>印刷数量</text>
+  <input bindinput="input" type="number" placeholder-class="pltext" id="amount" value='{{submitData.amount}}' placeholder='请填写数量' style='margin-left:88rpx;'></input>
+</view>
+<view class='inputView'>
+  <text>印刷颜色</text>
+  <picker value="{{MaterialColorIndex}}" range="{{MaterialColor}}" bindchange="bindMaterialColorChange">
+    <view class="picker">
+      {{MaterialColor[MaterialColorIndex]}}
+    </view>
+  </picker>
+</view>
+<view class='inputView'>
+  <text>印刷幅面</text>
+  <picker value="{{BreadthIndex}}" range="{{Breadth}}" bindchange="bindBreadthChange">
+    <view class="picker">
+      {{Breadth[BreadthIndex]}}
+    </view>
+  </picker>
+</view>
+<view class="address-box">
+  <view class="add-address" hidden="{{curAddressData}}">
+    <view class="title" bindtap="addAddress">新增收货地址</view>
+  </view>
+  <view class="show-address" hidden="{{!curAddressData}}" bindtap="selectAddress">
+    <input bindinput="input" placeholder-class="pltext" id="addressId" value='{{curAddressData.id}}' style="display:none"></input>
+    <view class="name-tel">{{curAddressData.name}} {{curAddressData.telephone}}</view>
+    <view class="addr-text">{{curAddressData.detail}}</view>
+  </view>
+</view>
+<view style="height:5px;background: #eee;width:100%;"></view>
+<view class='title'>后道工序</view>
+<checkbox-group bindchange="checkboxChange" class="checkboxGroup">
+  <label class="checkbox" wx:for="{{items}}" wx:key="{{index}}">
+    <checkbox value="{{item.name}}" checked="{{item.checked}}" />{{item.value}}
+  </label>
+</checkbox-group>
+
+<button type="warn" bindtap='gotoPrint'>我要印刷</button>

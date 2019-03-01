@@ -1,0 +1,79 @@
+<!--pages/classify/detail/dm/dm.wxml-->
+<MyPicker></MyPicker>
+<view class='inputView'>
+  <text>产品名称:</text>
+  <text>{{productList.name}}</text>
+</view>
+<view class='inputView'>
+  <text>产品说明:</text>
+  <text>{{productList.describe}}</text>
+</view>
+<view style="height:5px;background: #eee;width:100%;"></view>
+<view class='inputView'>
+  <text style='width:35%'>封面封底:</text>
+  <text style='margin-left:100rpx;width:50%'>4p</text>
+</view>
+<view class='inputView'>
+  <text>成品尺寸(长*宽)</text>
+  <picker value="{{sizeIndex}}" range="{{size}}" bindchange="bindSizeChange" style='padding-left:50rpx;text-align:center;'>
+    <view class="picker" style='white-space:nowrap;text-overflow:ellipsis;'>
+      {{size[sizeIndex]}}
+    </view>
+  </picker>
+</view>
+<view class='inputView' hidden='{{isHidden}}'>
+  <text>自定义尺寸</text>
+  <input bindinput="input" type="text" placeholder-class="pltext" id="length" value='{{submitData.length}}' placeholder='请填写尺寸' style='margin-left:100rpx;'></input>
+</view>
+<view class='inputView'>
+  <text>印刷数量</text>
+  <input bindinput="input" type="number" placeholder-class="pltext" id="amount" value='{{submitData.amount}}' placeholder='请填写数量' style='margin-left:100rpx;'></input>
+</view>
+<view class='inputView'>
+  <text>单双面</text>
+  <picker value="{{dsmIndex}}" range="{{dsm}}" bindchange="binddsmChange">
+    <view class="picker">
+      {{dsm[dsmIndex]}}
+    </view>
+  </picker>
+</view>
+<view class='inputView'>
+  <text>印刷颜色</text>
+  <picker value="{{colorIndex}}" range="{{color}}" bindchange="bindColorChange">
+    <view class="picker">
+      {{color[colorIndex]}}
+    </view>
+  </picker>
+</view>
+<view class='inputView'>
+  <text style='width:30%'>材料</text>
+  <picker mode="multiSelector" bindchange="bindMultiPickerChange" bindcolumnchange="bindMultiPickerColumnChange" style='width:100%;margin:0;padding:0;text-align:center;' value="{{multiIndex}}" range="{{multiArray}}">
+    <view class="picker">
+      {{multiArray[0][multiIndex[0]]}}，{{multiArray[1][multiIndex[1]]}}克
+    </view>
+  </picker>
+</view>
+<view class="address-box">
+  <view class="add-address" hidden="{{curAddressData}}">
+    <view class="title" bindtap="addAddress">新增收货地址</view>
+  </view>
+  <view class="show-address" hidden="{{!curAddressData}}" bindtap="selectAddress">
+    <input bindinput="input" placeholder-class="pltext" id="addressId" value='{{curAddressData.id}}' style="display:none"></input>
+    <view class="name-tel">{{curAddressData.name}} {{curAddressData.telephone}}</view>
+    <view class="addr-text">{{curAddressData.detail}}</view>
+  </view>
+</view>
+<view style="height:5px;background: #eee;width:100%;"></view>
+<view class='title'>封面封底后道工序</view>
+<checkbox-group bindchange="checkboxChange" class="checkboxGroup">
+  <label class="checkbox" wx:for="{{items}}" wx:key="{{index}}">
+    <checkbox value="{{item.name}}" checked="{{item.checked}}" />{{item.value}}
+  </label>
+</checkbox-group>
+<view class='title'>装订方式</view>
+<checkbox-group bindchange="sencondcheckboxChange" class="checkboxGroup">
+  <label class="checkbox" wx:for="{{SecondItems}}" wx:key="{{index}}">
+    <checkbox value="{{item.name}}" checked="{{item.checked}}" />{{item.value}}
+  </label>
+</checkbox-group>
+<button type="warn" bindtap='gotoPrint'>我要印刷</button>

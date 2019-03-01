@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "便签表单",
+  "usingComponents": {
+    "MyPicker": "../../component/picker/picker"
+  }
+}

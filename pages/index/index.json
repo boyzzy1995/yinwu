@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "印刷",
+  "usingComponents": {
+    "Contact": "../component/contact/contact",
+    "Address": "../component/address/address"
+  }
+}

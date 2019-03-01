@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "设计服务",
+  "usingComponents": {
+    "MyPicker": "../../component/picker/picker"
+  }
+}

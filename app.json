@@ -1,0 +1,54 @@
+{
+  "pages": [
+    "pages/classify/classify",
+    "pages/index/index",
+    "pages/logs/logs",
+    "pages/order/order",
+    "pages/address-add/index",
+    "pages/select-address/index",
+    "pages/classify/detail/bgj/bgj",
+    "pages/classify/detail/dm/dm",
+    "pages/classify/detail/PictureAlbum/PictureAlbum",
+    "pages/classify/detail/ColorBox/ColorBox",
+    "pages/classify/detail/Envelope/Envelope",
+    "pages/classify/detail/Reticule/Reticule",
+    "pages/classify/detail/NoteForm/NoteForm",
+    "pages/classify/detail/HagTag/HagTag",
+    "pages/classify/detail/NonWovenBag/NonWovenBag",
+    "pages/classify/detail/PlasticBag/PlasticBag",
+    "pages/classify/detail/PaperCup/PaperCup",
+    "pages/classify/detail/Desgin/Desgin",
+    "pages/classify/detail/Card/Card",
+    "pages/FreeCard/FreeCard"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "WeChat",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "selectedColor": "#54B4B3",
+    "color": "#666",
+    "list": [
+      {
+        "pagePath": "pages/classify/classify",
+        "text": "选择下单",
+        "iconPath": "static/menu/list.png",
+        "selectedIconPath": "static/menu/list-click.png"
+      },
+      {
+        "pagePath": "pages/index/index",
+        "text": "个性定制",
+        "iconPath": "static/menu/print.png",
+        "selectedIconPath": "static/menu/print-click.png"
+      },
+      {
+        "pagePath": "pages/order/order",
+        "text": "我的订单",
+        "iconPath": "static/menu/order.png",
+        "selectedIconPath": "static/menu/order-click.png"
+      }
+    ]
+  }
+}

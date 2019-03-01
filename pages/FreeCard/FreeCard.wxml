@@ -1,0 +1,43 @@
+<!--pages/FreeCard/FreeCard.wxml-->
+<view class="container">
+  <form bindsubmit="bindSave">
+    <view class="form-box">
+      <view class="row-wrap">
+        <view class="label">印刷人数</view>
+        <view class="label-right">
+          <input name="number" class="input" type="number" placeholder="请输入小于等于10的数字" />
+        </view>
+      </view>
+      <view class='note'>*提示:同一企业最多可免费印刷10人名片</view>
+      <view class="row-wrap">
+        <view class="label">微信/QQ</view>
+        <view class="label-right">
+          <input name="netConnect" class="input" type="text" placeholder="微信号/QQ号" />
+        </view>
+      </view>
+      <view class='note'>*提示:工作人员加您接收印刷原件</view>
+      <!--地址模块-->
+      <Address id="Address"></Address>
+    </view>
+    <view style="height:5px;background: #eee;width:100%;"></view>
+    <view class='checkbox-view'>
+      <view class='title'>您现在印刷主要是找哪些渠道?</view>
+      <checkbox-group bindchange="checkboxChange" class="checkboxGroup">
+        <label class="checkbox" wx:for="{{items}}" wx:key="{{index}}">
+          <checkbox value="{{item.name}}" checked="{{item.checked}}" />{{item.value}}
+        </label>
+        <input type='text' disabled='{{inputDsiabled}}' placeholder='其他渠道' class='channelInput' focus='{{inputFoucs}}' name="channel"></input>
+      </checkbox-group>
+    </view>
+    <view class='checkbox-view'>
+      <view class='title'>您公司最常用为哪些印务服务?</view>
+      <checkbox-group bindchange="SecondCheckboxChange" class="checkboxGroup">
+        <label class="checkbox" wx:for="{{SecondItems}}" wx:key="{{index}}">
+          <checkbox value="{{item.name}}" checked="{{item.checked}}" />{{item.value}}
+        </label>
+      </checkbox-group>
+    </view>
+    <button type="warn" class="save-btn" formType="submit">确认提交</button>
+    <button type="default" class="cancel-btn" bindtap="bindCancel">取消</button>
+  </form>
+</view>

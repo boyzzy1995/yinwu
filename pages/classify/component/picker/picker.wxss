@@ -1,0 +1,9 @@
+/* pages/classify/component/picker.wxss */
+swiper {
+  height: 300rpx;
+}
+
+.topImg {
+  width: 750rpx;
+  height: 300rpx;
+}

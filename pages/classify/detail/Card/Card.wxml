@@ -1,0 +1,64 @@
+<!--pages/classify/detail/dm/dm.wxml-->
+<MyPicker></MyPicker>
+<view class='inputView'>
+  <text>产品名称:</text>
+  <text>{{productList.name}}</text>
+</view>
+<view class='inputView'>
+  <text>产品说明:</text>
+  <text>{{productList.describe}}</text>
+</view>
+<view style="height:5px;background: #eee;width:100%;"></view>
+<view class='inputView'>
+  <text style='width:32%;font-size:22rpx'>成品尺寸、材料名称</text>
+  <picker mode="multiSelector" bindchange="bindMultiPickerChange" bindcolumnchange="bindMultiPickerColumnChange" style='width:68%;margin:0;padding:0;text-align:center;font-size:22rpx' value="{{multiIndex}}" range="{{multiArray}}">
+    <view class="picker">
+      {{multiArray[0][multiIndex[0]]}}，{{multiArray[1][multiIndex[1]]}}
+    </view>
+  </picker>
+</view>
+<view class='inputView'>
+  <text>款数</text>
+  <picker value="{{AmountIndex}}" range="{{Amount}}" bindchange="bindAmountChange">
+    <view class="picker">
+      {{Amount[AmountIndex]}}
+    </view>
+  </picker>
+</view>
+<view class='inputView'>
+  <text>每款盒数</text>
+  <picker value="{{EachAmountIndex}}" range="{{EachAmount}}" bindchange="bindEachAmountChange">
+    <view class="picker">
+      {{EachAmount[EachAmountIndex]}}
+    </view>
+  </picker>
+</view>
+<view class='inputView'>
+  <text>单双面</text>
+  <picker value="{{dsmIndex}}" range="{{dsm}}" bindchange="binddsmChange">
+    <view class="picker">
+      {{dsm[dsmIndex]}}
+    </view>
+  </picker>
+</view>
+
+<view class="address-box">
+  <view class="add-address" hidden="{{curAddressData}}">
+    <view class="title" bindtap="addAddress">新增收货地址</view>
+  </view>
+  <view class="show-address" hidden="{{!curAddressData}}" bindtap="selectAddress">
+    <input bindinput="input" placeholder-class="pltext" id="addressId" value='{{curAddressData.id}}' style="display:none"></input>
+    <view class="name-tel">{{curAddressData.name}} {{curAddressData.telephone}}</view>
+    <view class="addr-text">{{curAddressData.detail}}</view>
+  </view>
+</view>
+
+<view style="height:5px;background: #eee;width:100%;"></view>
+<view class='title'>后道工序</view>
+<checkbox-group bindchange="checkboxChange" class="checkboxGroup">
+  <label class="checkbox" wx:for="{{items}}" wx:key="{{index}}">
+    <checkbox value="{{item.name}}" checked="{{item.checked}}" />{{item.value}}
+  </label>
+</checkbox-group>
+
+<button type="warn" bindtap='gotoPrint'>我要印刷</button>

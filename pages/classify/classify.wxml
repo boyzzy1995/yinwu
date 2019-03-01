@@ -1,0 +1,24 @@
+<!--pages/classify/classify.wxml-->
+<Picker></Picker>
+<Contact></Contact>
+<view class='contentView'>
+  <view class='Coupon-view' wx:for-items="{{VariousList}}" wx:key="{{index}}">
+    <view class='Coupon' bindtap='toDetail' data-name="{{item.name}}" data-describe="{{item.describe}}" data-url="{{item.url}}">
+      <view class='img-view'>
+        <image src='{{item.picUrl}}'>
+        </image>
+      </view>
+      <view class='functional'>
+        <view class='price'>
+          <strong>{{item.name}}</strong>
+        </view>
+        <view class='range'>
+          <text>使用说明:{{item.describe}}</text>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
+<view class='bottom-tip'>
+  - 更多印刷需求，请直接在个性定制里提交 -
+</view>

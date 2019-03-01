@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "无纺布袋",
+  "usingComponents": {
+    "MyPicker": "../../component/picker/picker"
+  }
+}

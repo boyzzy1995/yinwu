@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "封套",
+  "usingComponents": {
+    "MyPicker": "../../component/picker/picker"
+  }
+}

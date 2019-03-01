@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "不干胶",
+  "usingComponents": {
+    "MyPicker": "../../component/picker/picker"
+  }
+}

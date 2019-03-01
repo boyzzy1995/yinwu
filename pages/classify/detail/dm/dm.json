@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "DM",
+  "usingComponents": {
+    "MyPicker": "../../component/picker/picker"
+  }
+}

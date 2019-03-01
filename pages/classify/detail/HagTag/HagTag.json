@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "挂牌",
+  "usingComponents": {
+    "MyPicker": "../../component/picker/picker"
+  }
+}

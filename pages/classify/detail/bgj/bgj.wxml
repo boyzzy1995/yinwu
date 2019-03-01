@@ -1,0 +1,77 @@
+<!--pages/classify/detail/bgj/bgj.wxml-->
+<MyPicker></MyPicker>
+<view class='inputView'>
+  <text>产品名称:</text>
+  <text>{{productList.name}}</text>
+</view>
+<view class='inputView'>
+  <text>产品说明:</text>
+  <text>{{productList.describe}}</text>
+</view>
+<view style="height:5px;background: #eee;width:100%;"></view>
+<view class='inputView'>
+  <text>成品尺寸(长*宽)</text>
+  <input bindinput="input" type="text" placeholder-class="pltext" id="length" value='{{submitData.length}}' placeholder='请填写尺寸'></input>
+</view>
+<view class='inputView'>
+  <text>印刷数量</text>
+  <input bindinput="input" type="number" placeholder-class="pltext" id="amount" value='{{submitData.amount}}' placeholder='请填写数量' style="width: 25%;"></input>
+</view>
+<view class='inputView'>
+  <text>印刷颜色</text>
+  <picker value="{{colorIndex}}" range="{{color}}" bindchange="bindColorChange">
+    <view class="picker">
+      {{color[colorIndex]}}
+    </view>
+  </picker>
+</view>
+<view class='inputView'>
+  <text>专色</text>
+  <picker value="{{espicalColorIndex}}" range="{{espicalColor}}" bindchange="bindespicalColorChange">
+    <view class="picker">
+      {{espicalColor[espicalColorIndex]}}
+    </view>
+  </picker>
+</view>
+<view class='inputView'>
+  <text>拖白</text>
+  <picker value="{{DWIndex}}" range="{{DW}}" bindchange="bindDWChange">
+    <view class="picker">
+      {{DW[DWIndex]}}
+    </view>
+  </picker>
+</view>
+<view class='inputView'>
+  <text>分条</text>
+  <picker value="{{StripingIndex}}" range="{{Striping}}" bindchange="bindStripingChange">
+    <view class="picker">
+      {{Striping[StripingIndex]}}
+    </view>
+  </picker>
+</view>
+<view class='inputView'>
+  <text style='width:30%'>材料</text>
+  <picker value="{{MaterialIndex}}" range="{{Material}}" bindchange="bindMaterialChange" style='width:100%;margin:0;padding:0;text-align:center;'>
+    <view class="picker">
+      {{Material[MaterialIndex]}}
+    </view>
+  </picker>
+</view>
+<view class="address-box">
+  <view class="add-address" hidden="{{curAddressData}}">
+    <view class="title" bindtap="addAddress">新增收货地址</view>
+  </view>
+  <view class="show-address" hidden="{{!curAddressData}}" bindtap="selectAddress">
+    <input bindinput="input" placeholder-class="pltext" id="addressId" value='{{curAddressData.id}}' style="display:none"></input>
+    <view class="name-tel">{{curAddressData.name}} {{curAddressData.telephone}}</view>
+    <view class="addr-text">{{curAddressData.detail}}</view>
+  </view>
+</view>
+<view style="height:5px;background: #eee;width:100%;"></view>
+<view class='title'>后道工序</view>
+<checkbox-group bindchange="checkboxChange" class="checkboxGroup">
+  <label class="checkbox" wx:for="{{items}}" wx:key="{{index}}">
+    <checkbox value="{{item.name}}" checked="{{item.checked}}" />{{item.value}}
+  </label>
+</checkbox-group>
+<button type="warn" bindtap='gotoPrint'>我要印刷</button>

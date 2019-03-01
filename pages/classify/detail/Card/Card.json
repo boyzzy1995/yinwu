@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "名片",
+  "usingComponents": {
+    "MyPicker": "../../component/picker/picker"
+  }
+}

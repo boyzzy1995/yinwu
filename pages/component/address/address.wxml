@@ -1,0 +1,11 @@
+<!--pages/component/address/address.wxml-->
+<view class="address-box">
+  <view class="add-address" hidden="{{curAddressData}}">
+    <view class="title" bindtap="addAddress">新增收货地址</view>
+  </view>
+  <view class="show-address" hidden="{{!curAddressData}}" bindtap="selectAddress">
+    <input bindinput="input" placeholder-class="pltext" id="addressId" value='{{curAddressData.id}}' style="display:none"></input>
+    <view class="name-tel">{{curAddressData.name}} {{curAddressData.telephone}}</view>
+    <view class="addr-text">{{curAddressData.detail}}</view>
+  </view>
+</view>

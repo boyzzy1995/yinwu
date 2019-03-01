@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "手提袋",
+  "usingComponents": {
+    "MyPicker": "../../component/picker/picker"
+  }
+}

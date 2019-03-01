@@ -1,0 +1,81 @@
+<wxs module="filters" src="import.wxs"></wxs>
+<Contact></Contact>
+<view class="container">
+  <view class="userinfo">
+    <block wx:if="{{userInfo && userInfo.avatarUrl}}">
+      <image class="userinfo-avatar" src="{{ userInfo.avatarUrl }}" background-size="cover"></image>
+      <text class="userinfo-nickname">{{ userInfo.nickName }}</text>
+    </block>
+    <view wx:else class="my-item" style="width:20%;padding:0rpx;margin:0rpx;background:none;border:none;height:auto;line-height:auto;">
+      <form report-submit='true' bindsubmit="formSubmit">
+        <button bindgetuserinfo='getUserInfo' lang="zh_CN" open-type="getUserInfo" form-type="submit">登录</button>
+      </form>
+    </view>
+
+  </view>
+  <view style="height:5px;background: #eee;width:100%;"></view>
+  <view class="my-item">
+    我的订单
+  </view>
+  <view class='my-item-icon'>
+    <view class='{{WatingPayiconsClass}}' bindtap='handlerWatingPayMoney'>
+      <image src='https://img.jinghangkuajing.com/printing/resources/order-menu/wdj.png-compress'>待定价</image>
+      <view>待定价</view>
+    </view>
+    <view class='{{hadSureMoneyClass}}' bindtap='handlerhadSureMoney'>
+      <image src='https://img.jinghangkuajing.com/printing/resources/order-menu/ydj.png-compress'>已定价</image>
+      <view>已定价</view>
+    </view>
+    <view class='{{WatingSendiconsClass}}' bindtap='handlerWatingSend'>
+      <image src='https://img.jinghangkuajing.com/printing/resources/order-menu/dfh.png-compress'>待发货</image>
+      <view>待发货</view>
+    </view>
+    <view class='{{WatingReceiveiconsClass}}' bindtap='handlerWatingReceiveGoods'>
+      <image src='https://img.jinghangkuajing.com/printing/resources/order-menu/dsh.png-compress'>待收货</image>
+      <view>待收货</view>
+    </view>
+    <view class='{{CompleteiconsClass}}' bindtap='handlerComplete'>
+      <image src='https://img.jinghangkuajing.com/printing/resources/order-menu/ywc.png-compress'>已完成</image>
+      <view>已完成</view>
+    </view>
+  </view>
+  <view class="viewBox" wx:for-items="{{orderList}}" wx:key="{{index}}">
+    <view class="ifBox" wx:if="{{orderStatus==item.status}}">
+      <view class='inputView'>
+        <text>提交时间:</text>
+        <text>{{item.createTime}}</text>
+      </view>
+      <view class='inputView'>
+        <text>订单号:</text>
+        <text>{{item.orderNumber}}</text>
+      </view>
+      <view class='inputView' style='flex-wrap:wrap;'>
+        <view class='img'>
+          <image src='{{filters.toFix(item.examplePic)}}'></image>
+        </view>
+        <view class='text'>
+          <view class='child'>
+            产品名:{{item.product}}
+          </view>
+          <view class='child'>
+            印刷数量:{{item.amount}}
+          </view>
+        </view>
+      </view>
+      <view class='countView'>
+        <text> <block wx:if="{{item.status!=0}}">合计:￥{{item.total}}</block></text>
+        <view class='btnView '>
+          <button type='warn' style='display:{{btnOkDisplay}};float:right;margin-left:20rpx ' bindtap='payOrder' data-id="{{item.id}}">确认下单</button>
+          <button style='display:{{btnCancelDisplay}};float:right ' bindtap='cancelOrder' data-id="{{item.id}}">取消下单</button>
+          <button type='warn' style='display:{{btnReceiveDisplay}};float:right ' bindtap='comfirmReceive' data-id="{{item.id}}">确认收货</button>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class='words ' style='display:{{tip}} '>
+    订单提示：已收到您的需求，请将设计原稿以“公司名+订单号”为 邮件名发送panjiwei@dingtalk.com ；收稿后⼯作人员会与您联系 并确定报价，系统改价后再点击确认下单。
+  </view>
+  <view style='display:{{EmptyTip}};margin-top:250rpx;color:#666;'>
+     暂无任何订单信息
+  </view>
+</view>

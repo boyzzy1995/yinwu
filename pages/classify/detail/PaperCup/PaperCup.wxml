@@ -1,0 +1,39 @@
+<!--pages/classify/detail/bgj/bgj.wxml-->
+<MyPicker></MyPicker>
+<view class='inputView'>
+  <text>产品名称:</text>
+  <text>{{productList.name}}</text>
+</view>
+<view class='inputView'>
+  <text>产品说明:</text>
+  <text>{{productList.describe}}</text>
+</view>
+<view style="height:5px;background: #eee;width:100%;"></view>
+<view class='inputView'>
+  <text>规格型号</text>
+  <picker value="{{SpecificationTypeIndex}}" range="{{SpecificationType}}" bindchange="bindSpecificationTypeChange" style='width:51%;'>
+    <view class="picker">
+      {{SpecificationType[SpecificationTypeIndex]}}
+    </view>
+  </picker>
+</view>
+<view class='inputView'>
+  <text>印刷数量</text>
+  <picker value="{{AmountIndex}}" range="{{Amount}}" bindchange="bindAmountChange">
+    <view class="picker">
+      {{Amount[AmountIndex]}}
+    </view>
+  </picker>
+</view>
+<view class="address-box">
+  <view class="add-address" hidden="{{curAddressData}}">
+    <view class="title" bindtap="addAddress">新增收货地址</view>
+  </view>
+  <view class="show-address" hidden="{{!curAddressData}}" bindtap="selectAddress">
+    <input bindinput="input" placeholder-class="pltext" id="addressId" value='{{curAddressData.id}}' style="display:none"></input>
+    <view class="name-tel">{{curAddressData.name}} {{curAddressData.telephone}}</view>
+    <view class="addr-text">{{curAddressData.detail}}</view>
+  </view>
+</view>
+
+<button type="warn" bindtap='gotoPrint' style='position:absolute;bottom:0;width:100%;'>我要印刷</button>

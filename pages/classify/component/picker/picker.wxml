@@ -1,0 +1,8 @@
+<!--pages/classify/component/picker.wxml-->
+<swiper indicator-dots="{{swiper.indicatorDots}}" autoplay="{{swiper.autoplay}}" interval="{{swiper.interval}}" duration="{{swiper.duration}}">
+  <block wx:for="{{swiper.topImgs}}" wx:key="{{index}}" wx:for-index="index">
+    <swiper-item>
+      <image src="{{item.url}}" class="slide-image" class='topImg' data-index="{{index}}" bindtap="toOuter" />
+    </swiper-item>
+  </block>
+</swiper>

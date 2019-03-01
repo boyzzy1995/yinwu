@@ -1,0 +1,8 @@
+var filters = {
+  toFix: function (value) {
+    return value.split("#", 1)[0]
+  }
+}
+module.exports = {
+  toFix: filters.toFix
+}
